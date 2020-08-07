@@ -15,10 +15,10 @@ var hideSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "none";
 }
 
-var getJSONData = function(CATEGORIES_URL){
+var getJSONData = function(url){
     var result = {};
     showSpinner();
-    return fetch(url)
+    return fetch(CATEGORIES_URL)
     .then(response => {
       if (response.ok) {
         return response.json();
