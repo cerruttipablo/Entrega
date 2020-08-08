@@ -19,21 +19,22 @@ function showCategoriesList(array){
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
                         <h4 class="mb-1">`+ category.name +`</h4>
-                        <small class="text-muted">` + category.productCount + ` artículos</small>
+                        <small class="text-muted">` + category.soldCount + ` vendidos</small>
                     </div>
-                   <div>`+ category.description +`</div>
+                   <div>`+ category.description +`</div><br><br><br>
+                   <h4 style="text-align: right">`+ category.currency +` `+ category.cost +`</h4>
                 </div>
             </div>
         </div>
         `
 
-        document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
+        document.getElementById("lista-de-productos").innerHTML = htmlContentToAppend;
     }
 }
 
 showSpinner();
 document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(LIST_URL).then(function(resultObj){
+    getJSONData(PRODUCTS_URL).then(function(resultObj){
         if (resultObj.status === "ok")
         {
             categoriesArray = resultObj.data;
