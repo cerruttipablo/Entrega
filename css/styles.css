@@ -79,6 +79,8 @@ footer p {
   width: 50%;
   left: 50%;
   transform: translate(-50%, 0);
+  
+  display: none;     /*ESTO LO AGREGUÉ YO PARA QUE NO SALGAN LOS CARTELES ROJOS*/
 }
 
 .lds-ring {
